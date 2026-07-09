@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPTQ Yatim Dhuafa Al Alaq - Pondok Pesantren Tahfidzul Qur'an</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Amiri (Arabic Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        gold: {
+                            100: '#fef3c7',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .arabic-text {
+            font-family: 'Amiri', serif;
+        }
+        /* Custom scrollbar for premium touch */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #065f46;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #022c22;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+<!-- Custom Toast Container -->
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3"></div>
+
+<!-- Top Bar Contact Info -->
+<div class="bg-emerald-950 text-emerald-100 text-xs py-3 px-4 border-b border-emerald-800/50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-4">
+            <a href="https://wa.me/6282195303065" target="_blank" class="hover:text-gold-400 transition-colors flex items-center gap-1.5 font-medium">
+                <i class="fa-solid fa-phone text-gold-400"></i> +62 821-9530-3065
+            </a>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-emerald-900/80 px-2.5 py-0.5 rounded text-[10px] text-gold-400 font-bold uppercase tracking-widest">Mencetak Hafiz Mandiri & Berakhlak</span>
+            <div class="flex gap-3 ml-2 border-l border-emerald-800/60 pl-3">
+                <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-emerald-100/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-tr from-emerald-800 to-emerald-600 p-2.5 rounded-2xl shadow-lg shadow-emerald-900/10 border border-gold-400/25">
+                    <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="block text-xl font-extrabold text-emerald-950 tracking-tight leading-tight">AL ALAQ</span>
+                    <span class="block text-[9px] tracking-widest text-gold-600 font-bold uppercase">Tahfidz Yatim, Dhuafa & PAUD/TK</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#beranda" class="text-emerald-950/80 font-semibold text-sm hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-600">Beranda</a>
+                <a href="#tentang" class="text-emerald-950/80 font-semibold text-sm hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-600">Profil</a>
+                <a href="#program" class="text-emerald-950/80 font-semibold text-sm hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-600">Program</a>
+                <a href="#fasilitas" class="text-emerald-950/80 font-semibold text-sm hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-600">Pembangunan</a>
+                <a href="#psb" class="text-emerald-950/80 font-semibold text-sm hover:text-emerald-700 transition-colors py-2 border-b-2 border-transparent hover:border-emerald-600">Pendaftaran</a>
+                
+                <a href="#donasi" class="bg-gradient-to-r from-emerald-800 to-emerald-700 hover:from-emerald-900 hover:to-emerald-800 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-emerald-800/15 flex items-center gap-2 transform hover:-translate-y-0.5 transition-all duration-300">
+                    <i class="fa-solid fa-heart-circle-check text-gold-400"></i> Donasi
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center md:hidden">
+                <button id="mobile-menu-btn" class="text-emerald-950 focus:outline-none p-2 rounded-xl hover:bg-emerald-50/50 transition-colors">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-5 space-y-3 shadow-xl">
+        <a href="#beranda" class="block text-emerald-950 font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-50">Beranda</a>
+        <a href="#tentang" class="block text-emerald-950 font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-50">Profil</a>
+        <a href="#program" class="block text-emerald-950 font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-50">Program</a>
+        <a href="#fasilitas" class="block text-emerald-950 font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-50">Pembangunan</a>
+        <a href="#psb" class="block text-emerald-950 font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-50">Pendaftaran (PSB)</a>
+        <hr class="border-slate-100">
+        <a href="#donasi" class="block text-center bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-3.5 rounded-xl shadow-lg transition-colors">
+            <i class="fa-solid fa-heart-circle-check text-gold-400 mr-2"></i> Donasi Pembangunan
+        </a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="beranda" class="relative min-h-[92vh] flex items-center bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 overflow-hidden text-white py-12">
+    <!-- Subtle Pattern overlay -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    
+    <!-- Background SVG Glows -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-emerald-600/15 rounded-full filter blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-gold-600/10 rounded-full filter blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 w-full">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 bg-emerald-800/40 border border-emerald-700/50 px-4 py-2 rounded-full text-gold-400 font-bold text-xs sm:text-sm tracking-wide shadow-inner">
+                    <i class="fa-solid fa-bell text-xs animate-bounce"></i> NEW: Telah Dibuka Pendaftaran PAUD / TK Islam Al Alaq!
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white">
+                    Membina Generasi <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-300">Sejak Usia Dini</span> & Penghafal Al Qur'an
+                </h1>
+                <p class="text-base sm:text-lg text-emerald-100 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Pondok Pesantren Al Alaq saat ini mendidik **20 santri yatim dhuafa** menjadi hafidz Qur'an secara gratis, serta membina generasi emas sejak usia dini melalui program **PAUD dan TK Islam Al Alaq**.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                    <a href="#psb" class="bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-600 hover:to-amber-600 text-emerald-950 px-8 py-4 rounded-2xl font-extrabold text-base shadow-lg shadow-gold-500/10 transition-all transform hover:-translate-y-1 text-center">
+                        Pendaftaran Santri & Siswa
+                    </a>
+                    <a href="https://wa.me/6282195303065?text=Assalamualaikum,%20saya%20ingin%20bertanya%20tentang%20pendaftaran%20di%20Al%20Alaq" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/15 text-white px-8 py-4 rounded-2xl font-bold text-base backdrop-blur-sm transition-all transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Tanya Admin (WA)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Feature Card -->
+            <div class="lg:col-span-5">
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-8 sm:p-10 rounded-[32px] shadow-2xl relative shadow-emerald-950/50">
+                    <div class="absolute -top-5 -right-5 bg-gold-500 text-emerald-950 font-black px-4 py-2 rounded-2xl transform rotate-6 shadow-xl text-xs uppercase tracking-wider">
+                        Baru Dibuka
+                    </div>
+                    <div class="text-center mb-8">
+                        <p class="arabic-text text-4xl text-gold-400 mb-3 select-none">﷽</p>
+                        <h3 class="text-2xl font-extrabold">Fokus Utama Pesantren</h3>
+                        <p class="text-xs text-emerald-300 font-medium tracking-wider uppercase mt-1">Amanah Dakwah & Sosial</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 bg-emerald-950/50 p-4 rounded-2xl border border-emerald-800/40">
+                            <span class="bg-gold-500/20 text-gold-400 p-3 rounded-xl shrink-0"><i class="fa-solid fa-wheat-awn text-lg"></i></span>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-white">Program Beras Santri</h4>
+                                <p class="text-xs text-emerald-200/90 mt-1 leading-relaxed">Mencukupi kebutuhan konsumsi beras 100 kg / bulan secara terpadu.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-emerald-950/50 p-4 rounded-2xl border border-emerald-800/40">
+                            <span class="bg-gold-500/20 text-gold-400 p-3 rounded-xl shrink-0"><i class="fa-solid fa-hotel text-lg"></i></span>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-white">Pembangunan Asrama</h4>
+                                <p class="text-xs text-emerald-200/90 mt-1 leading-relaxed">Progres konstruksi asrama santri berjalan lancar (Progres 60%).</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-emerald-950/50 p-4 rounded-2xl border border-emerald-800/40">
+                            <span class="bg-gold-500/20 text-gold-400 p-3 rounded-xl shrink-0"><i class="fa-solid fa-hands-holding-child text-lg"></i></span>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-white">Beasiswa Yatim & Dhuafa</h4>
+                                <p class="text-xs text-emerald-200/90 mt-1 leading-relaxed">Amanah beasiswa pendidikan gratis penuh untuk 20 santri asuh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Quran Verse of the Day Widget -->
+<section class="bg-emerald-900 py-8 text-emerald-100 border-y border-gold-500/15">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 mb-3 bg-emerald-950/60 px-3 py-1 rounded-full text-xs text-gold-400 font-bold uppercase tracking-widest">
+            <i class="fa-solid fa-quote-left text-[9px]"></i> Inspirasi Hari Ini <i class="fa-solid fa-quote-right text-[9px]"></i>
+        </div>
+        <div id="quran-container" class="transition-opacity duration-500">
+            <p id="quran-arabic" class="arabic-text text-2xl md:text-3xl lg:text-4xl text-gold-400 leading-loose mb-3">
+                إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ
+            </p>
+            <p id="quran-translation" class="text-sm md:text-base italic font-light max-w-2xl mx-auto leading-relaxed">
+                "Sesungguhnya Kamilah yang menurunkan Al-Qur'an, dan pasti Kami pula yang memeliharanya."
+            </p>
+            <p id="quran-reference" class="text-xs text-gold-400/80 mt-2 font-bold tracking-wider">
+                (QS. Al-Hijr: 9)
+            </p>
+        </div>
+        <button onclick="generateVerse()" class="mt-5 text-[11px] bg-emerald-950 hover:bg-emerald-950/80 text-gold-400 font-bold px-4 py-2 rounded-xl border border-gold-500/15 transition-all hover:scale-105 active:scale-95 shadow-md">
+            <i class="fa-solid fa-shuffle mr-1"></i> Ayat Lainnya
+        </button>
+    </div>
+</section>
+
+<!-- Key Statistics Cards -->
+<section class="relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] border border-slate-100 grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-slate-100 overflow-hidden">
+        <div class="p-8 text-center transition-all hover:bg-slate-50/50">
+            <span class="block text-4xl lg:text-5xl font-black text-emerald-900">20</span>
+            <span class="block text-xs font-bold text-slate-400 mt-2 uppercase tracking-wider">Santri Aktif</span>
+        </div>
+        <div class="p-8 text-center transition-all hover:bg-slate-50/50">
+            <span class="block text-4xl lg:text-5xl font-black text-emerald-900">60%</span>
+            <span class="block text-xs font-bold text-slate-400 mt-2 uppercase tracking-wider">Asrama Santri</span>
+        </div>
+        <div class="p-8 text-center transition-all hover:bg-slate-50/50">
+            <span class="block text-4xl lg:text-5xl font-black text-emerald-900">20%</span>
+            <span class="block text-xs font-bold text-slate-400 mt-2 uppercase tracking-wider">Masjid Utama</span>
+        </div>
+        <div class="p-8 text-center bg-gold-50/20 transition-all">
+            <span class="block text-4xl lg:text-5xl font-black text-emerald-900">100 Kg</span>
+            <span class="block text-xs font-extrabold text-emerald-800 mt-2 uppercase tracking-wider">Beras / Bulan</span>
+        </div>
+    </div>
+</section>
+
+<!-- Profile / About Us Section -->
+<section id="tentang" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Graphic / Image Wrapper with Premium Shadows -->
+            <div class="relative group">
+                <div class="absolute -top-6 -left-6 w-72 h-72 bg-emerald-100 rounded-[40px] filter blur-3xl opacity-60"></div>
+                <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-gold-100 rounded-[40px] filter blur-3xl opacity-40"></div>
+                
+                <div class="relative bg-gradient-to-br from-emerald-800 to-emerald-950 rounded-[36px] p-4 shadow-[0_25px_60px_-15px_rgba(6,95,70,0.15)] border border-emerald-800/10 transition-transform duration-500 group-hover:scale-[1.01]">
+                    <!-- Real local asrama.jpg image with fallback wrapper -->
+                    <img src="asrama.jpg" alt="Asrama Santri Al Alaq" class="rounded-[28px] object-cover w-full h-[380px] shadow-inner" onerror="this.src='https://placehold.co/800x600/065f46/ffffff?text=Asrama+Al+Alaq+60%25'">
+                    
+                    <div class="absolute inset-x-4 bottom-4 bg-gradient-to-t from-emerald-950/90 via-emerald-950/70 to-transparent p-6 rounded-[24px]">
+                        <span class="bg-gold-500 text-emerald-950 text-[10px] px-3 py-1 rounded-lg font-black uppercase tracking-widest">Fokus Utama</span>
+                        <h4 class="text-lg font-bold text-white mt-2 leading-snug">Pendidikan Al-Qur'an Sejak Dini & Kemandirian Santri</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="space-y-8">
+                <div>
+                    <span class="text-gold-600 font-extrabold text-xs uppercase tracking-widest block mb-2.5">Profil Pondok Pesantren</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-emerald-950 leading-tight">Berdiri Memuliakan Anak Yatim, Dhuafa & Pendidikan Dini</h2>
+                </div>
+                
+                <p class="text-slate-600 leading-relaxed text-sm sm:text-base font-light">
+                    <strong>Pondok Pesantren Tahfidzul Qur'an (PPTQ) Yatim Dhuafa Al Alaq</strong> didirikan atas kepedulian yang mendalam terhadap pendidikan Al-Qur'an bagi anak-anak yatim dan dhuafa tanpa biaya. Di samping fokus mendidik dan mengasuh **20 santri aktif** agar menjadi penghafal Al-Qur'an, kini kami juga melebarkan dakwah pendidikan melalui penyediaan layanan **PAUD dan TK Islam Al Alaq** untuk mempersiapkan karakter mulia anak semenjak usia dini.
+                </p>
+
+                <!-- Vision & Mission Tabs with Clean Micro-Interactions -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.015)] space-y-5">
+                    <div class="flex gap-2.5 border-b border-slate-100 pb-3">
+                        <button onclick="switchTab('visi')" id="tab-visi-btn" class="px-5 py-2.5 rounded-xl text-xs font-extrabold bg-emerald-800 text-white shadow-md shadow-emerald-800/10 transition-all">Visi</button>
+                        <button onclick="switchTab('misi')" id="tab-misi-btn" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200/70 transition-all">Misi</button>
+                    </div>
+                    
+                    <div id="tab-visi-content" class="text-slate-600 text-sm leading-relaxed font-light">
+                        <p class="font-semibold text-emerald-950 text-base mb-2">"Menjadi lembaga pendidikan Islami yang unggul dalam melahirkan generasi penghafal Qur'an yang mandiri, serta meletakkan fondasi akhlak mulia dan kecerdasan anak sejak usia paling dini."</p>
+                    </div>
+                    
+                    <div id="tab-misi-content" class="hidden text-slate-600 text-sm leading-relaxed space-y-3 font-light">
+                        <div class="flex gap-3 items-start">
+                            <span class="text-emerald-800 font-extrabold">1.</span>
+                            <p>Membina hafalan Al-Qur'an secara kuat (mutqin) bagi 20 santri yatim dan dhuafa secara gratis.</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-emerald-800 font-extrabold">2.</span>
+                            <p>Menyelenggarakan pendidikan anak usia dini (PAUD / TK) bermutu berlandaskan nilai-nilai Qur'ani.</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <span class="text-emerald-800 font-extrabold">3.</span>
+                            <p>Memenuhi kecukupan pangan pokok beras santri sebanyak 100 kg per bulan dan biaya beasiswa santri asuh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Programs Section -->
+<section id="program" class="py-24 bg-emerald-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-gold-400 font-bold text-xs uppercase tracking-widest block mb-2">Program Unggulan</span>
+            <h2 class="text-3xl md:text-4xl font-black">Kurikulum Pembelajaran Terintegrasi</h2>
+            <p class="text-emerald-200 mt-4 font-light text-sm md:text-base leading-relaxed">
+                Kami menyajikan jenjang pendidikan berkesinambungan, mulai dari fondasi karakter dasar balita hingga pencapaian hafalan Al-Qur'an yang mutqin.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Program 1 (PAUD/TK BARU) -->
+            <div class="bg-emerald-900/30 border-2 border-gold-400 p-8 sm:p-10 rounded-[32px] hover:border-gold-500 transition-all group hover:-translate-y-1 relative overflow-hidden shadow-xl shadow-emerald-950/30">
+                <div class="absolute top-0 right-0 bg-gold-500 text-emerald-950 text-[10px] font-black px-4 py-1.5 rounded-bl-2xl uppercase tracking-widest">
+                    Program Baru
+                </div>
+                <div class="w-14 h-14 bg-gold-400 text-emerald-950 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform shadow-lg shadow-gold-400/10">
+                    <i class="fa-solid fa-child"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gold-400">PAUD & TK Islam Al Alaq</h3>
+                <p class="text-emerald-100/90 text-sm leading-relaxed font-light">
+                    Pendidikan anak usia dini berbasis pengembangan motorik, akhlak karimah, pengenalan huruf hijaiyah dasar, dan hafalan doa-doa pendek harian.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-2">
+                    <span class="bg-emerald-900 px-3 py-1 rounded-full text-[10px] font-semibold text-gold-400 uppercase tracking-wider">Usia 3 - 6 Tahun</span>
+                    <span class="bg-emerald-900 px-3 py-1 rounded-full text-[10px] font-semibold text-gold-400 uppercase tracking-wider">Kelas Kondusif</span>
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div class="bg-emerald-900/30 border border-emerald-800/80 p-8 sm:p-10 rounded-[32px] hover:border-gold-500/40 transition-all group hover:-translate-y-1 shadow-xl">
+                <div class="w-14 h-14 bg-emerald-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-book-quran"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Tahfidzul Qur'an & Beasiswa</h3>
+                <p class="text-emerald-100/90 text-sm leading-relaxed font-light">
+                    Program utama menghafal Al-Qur'an 30 Juz secara lancar khusus bagi yatim & dhuafa binaan. Didukung dengan beasiswa belajar penuh dan jaminan mukim gratis.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-2">
+                    <span class="bg-emerald-900 px-3 py-1 rounded-full text-[10px] font-semibold text-gold-400 uppercase tracking-wider">100% Gratis</span>
+                    <span class="bg-emerald-900 px-3 py-1 rounded-full text-[10px] font-semibold text-gold-400 uppercase tracking-wider">20 Santri Yatim</span>
+                </div>
+            </div>
+
+            <!-- Program 3 -->
+            <div class="bg-emerald-900/30 border border-emerald-800/80 p-8 sm:p-10 rounded-[32px] hover:border-gold-500/40 transition-all group hover:-translate-y-1 shadow-xl">
+                <div class="w-14 h-14 bg-emerald-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-wheat-awn"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Pangan Beras & Kemandirian</h3>
+                <p class="text-emerald-100/90 text-sm leading-relaxed font-light">
+                    Menjamin ketersediaan pasokan 100 kg beras per bulan untuk makan santri, sembari membekali mereka dengan dasar adab mulia, disiplin harian, dan ketangguhan mental.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-2">
+                    <span class="bg-emerald-900 px-3 py-1 rounded-full text-[10px] font-semibold text-gold-400 uppercase tracking-wider">100 Kg / Bulan</span>
+                    <span class="bg-emerald-900 px-3 py-1 rounded-full text-[10px] font-semibold text-gold-400 uppercase tracking-wider">Adab & Karakter</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facilities & Development Section -->
+<section id="fasilitas" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-gold-600 font-bold text-xs uppercase tracking-widest block mb-2">Status Fasilitas & Pembangunan</span>
+            <h2 class="text-3xl md:text-4xl font-black text-emerald-950">Progres Pembangunan Saat Ini</h2>
+            <p class="text-slate-600 mt-4 text-sm md:text-base font-light leading-relaxed">
+                Saat ini, Yayasan sedang mengawal dua pembangunan fisik utama secara intensif di area pondok demi kelayakan fasilitas ibadah dan hunian santri yatim dhuafa.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+            <!-- Project 1: Dormitory 60% -->
+            <div class="bg-slate-50 p-8 sm:p-10 rounded-[32px] border border-emerald-100/50 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_20px_50px_-10px_rgba(6,95,70,0.04)] transition-all">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="bg-emerald-800 text-white text-[9px] font-extrabold px-3 py-1 rounded-lg uppercase tracking-wider inline-block shadow-sm">Proyek 1: Sedang Berjalan</span>
+                        <span class="text-emerald-800 font-extrabold text-xs tracking-wider uppercase flex items-center gap-1.5"><i class="fa-solid fa-hotel"></i> Asrama</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-emerald-950 mb-3">Gedung Asrama Santri Al Alaq</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8 font-light">
+                        Pembangunan tempat tinggal yang layak bagi **20 santri** yatim & dhuafa penghafal Al-Qur'an. Saat ini progres pengerjaan fisik struktur utama dan lantai dasar telah menyentuh angka **60% selesai**. Uluran tangan Anda sangat membantu penyelesaian sisa tahap akhir kamar tinggal mereka.
+                    </p>
+                </div>
+                
+                <div>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex justify-between text-xs font-bold text-slate-700">
+                            <span>Struktur & Dinding Kamar</span>
+                            <span class="text-emerald-850">60% Selesai</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 h-3 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <a href="#donasi" class="block w-full bg-emerald-800 hover:bg-emerald-900 text-white font-extrabold py-3.5 px-6 rounded-2xl text-center text-xs transition-all shadow-md shadow-emerald-800/10 hover:shadow-lg hover:shadow-emerald-800/15">
+                        <i class="fa-solid fa-heart mr-1.5 text-gold-400"></i> Donasi Asrama
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: Mosque 20% -->
+            <div class="bg-slate-50 p-8 sm:p-10 rounded-[32px] border border-emerald-100/50 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_20px_50px_-10px_rgba(6,95,70,0.04)] transition-all">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="bg-emerald-800 text-white text-[9px] font-extrabold px-3 py-1 rounded-lg uppercase tracking-wider inline-block shadow-sm">Proyek 2: Sedang Berjalan</span>
+                        <span class="text-emerald-800 font-extrabold text-xs tracking-wider uppercase flex items-center gap-1.5"><i class="fa-solid fa-mosque"></i> Masjid</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-emerald-950 mb-3">Pembangunan Masjid Jami' Al Alaq</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-8 font-light">
+                        Penyediaan pusat ibadah bersama, kajian ilmu, serta tempat setoran hafalan harian bagi **20 santri** dan masyarakat sekitar. Progres pengerjaan fondasi kokoh dan tiang pancang masjid saat ini berjalan di angka **20% selesai**. Mari berwakaf jariyah untuk mendirikan rumah Allah.
+                    </p>
+                </div>
+                
+                <div>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex justify-between text-xs font-bold text-slate-700">
+                            <span>Pekerjaan Fondasi & Tiang Pancang</span>
+                            <span class="text-emerald-800">20% Selesai</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 h-3 rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+
+                    <a href="#donasi" class="block w-full bg-emerald-800 hover:bg-emerald-900 text-white font-extrabold py-3.5 px-6 rounded-2xl text-center text-xs transition-all shadow-md shadow-emerald-800/10 hover:shadow-lg hover:shadow-emerald-800/15">
+                        <i class="fa-solid fa-heart mr-1.5 text-gold-400"></i> Wakaf Masjid
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Plans/Dormitory Placeholder with Premium Outlines -->
+        <div class="mt-12 p-6 border-2 border-dashed border-slate-200 rounded-[24px] bg-slate-50/40 max-w-xl mx-auto">
+            <div class="flex items-center gap-3 mb-2.5 justify-center">
+                <span class="bg-slate-200/80 text-slate-500 w-8 h-8 rounded-lg flex items-center justify-center text-xs shadow-sm"><i class="fa-solid fa-school"></i></span>
+                <h4 class="font-extrabold text-slate-600 text-sm">Tahap Rencana Selanjutnya: Sarana Kelas PAUD/TK</h4>
+            </div>
+            <p class="text-xs text-slate-400 text-center leading-relaxed font-light">
+                Penyediaan ruang belajar terdedikasi serta fasilitas bermain edukatif luar ruangan yang representatif bagi siswa-siswi PAUD/TK Islam Al Alaq setelah proyek fisik di atas rampung.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Portal Section with Construction Campaign -->
+<section id="donasi" class="py-24 bg-gradient-to-br from-emerald-50 via-teal-50/20 to-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-16 items-start">
+            
+            <!-- Donation Information & Construction Progress -->
+            <div class="lg:col-span-6 space-y-8">
+                <div>
+                    <span class="text-gold-600 font-bold text-xs uppercase tracking-widest block mb-2">Aksi Peduli & Wakaf</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-emerald-950 leading-tight">Donasi Pembangunan & Operasional</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base font-light">
+                    Saat ini, sebanyak **20 santri yatim dhuafa** berada di bawah asuhan langsung pondok. Kami membutuhkan uluran tangan Anda untuk memenuhi kebutuhan operasional pendidikan (beasiswa), kebutuhan pangan beras bulanan (**100 kg**), serta penyelesaian proyek fisik asrama (**60%**) dan masjid (**20%**).
+                </p>
+
+                <!-- KARTU VISUAL KEBUTUHAN BERAS DAN BEASISWA BARU -->
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 p-8 rounded-[32px] space-y-6 shadow-sm">
+                    <h4 class="font-extrabold text-amber-950 text-sm tracking-wide uppercase flex items-center gap-2">
+                        <i class="fa-solid fa-wheat-awn text-amber-600"></i> Kebutuhan Pangan Pokok Santri
+                    </h4>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm">
+                            <span class="text-[9px] uppercase font-extrabold text-slate-400 tracking-wider block">Kebutuhan Beras</span>
+                            <span class="text-3xl font-black text-amber-950 block mt-1.5">100 Kg <span class="text-xs font-normal text-slate-500">/ Bulan</span></span>
+                            <span class="text-[10px] text-amber-800 block mt-2 font-medium"><i class="fa-solid fa-circle-info mr-1"></i> Konsumsi harian 20 santri</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm">
+                            <span class="text-[9px] uppercase font-extrabold text-slate-400 tracking-wider block">Biaya Beasiswa</span>
+                            <span class="text-3xl font-black text-emerald-800 block mt-1.5">Gratis Penuh</span>
+                            <span class="text-[10px] text-emerald-700 block mt-2 font-medium"><i class="fa-solid fa-heart mr-1"></i> Makanan, kitab, & asrama</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-amber-200/40">
+                        <div class="flex justify-between text-xs font-bold text-amber-950">
+                            <span>Target Distribusi Beras Berjalan</span>
+                            <span class="text-red-650 font-black flex items-center gap-1"><i class="fa-solid fa-triangle-exclamation text-red-500 animate-pulse"></i> Belum Terpenuhi</span>
+                        </div>
+                        <div class="w-full bg-amber-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-red-500 via-amber-500 to-amber-200 h-2.5 rounded-full" style="width: 35%"></div>
+                        </div>
+                        <p class="text-[10px] text-amber-900/85 italic leading-relaxed">Saat ini stok beras berjalan baru terkumpul sekitar 35%, sangat membutuhkan bantuan Anda.</p>
+                    </div>
+                </div>
+
+                <!-- Project Progress Tracker Widget -->
+                <div class="bg-white p-8 rounded-[32px] border border-emerald-100/50 shadow-sm space-y-5">
+                    <h4 class="font-extrabold text-emerald-950 text-sm tracking-wide uppercase flex items-center gap-2">
+                        <i class="fa-solid fa-helmet-safety text-amber-500"></i> Status Pembangunan Fisik Aktif
+                    </h4>
+                    
+                    <div class="space-y-4">
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-bold">
+                                <span class="text-slate-700">Pembangunan Gedung Asrama Santri</span>
+                                <span class="text-emerald-800">60% Selesai</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-bold">
+                                <span class="text-slate-700">Pembangunan Masjid Jami' Al Alaq</span>
+                                <span class="text-emerald-800">20% Selesai</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Official Bank Accounts Info Box -->
+                <div class="bg-emerald-950 text-white p-8 rounded-[32px] border border-emerald-800/40 shadow-xl space-y-5 relative overflow-hidden">
+                    <div class="absolute right-0 bottom-0 opacity-5 transform translate-x-6 translate-y-6 text-9xl">
+                        <i class="fa-solid fa-kaaba"></i>
+                    </div>
+                    <h4 class="font-bold text-gold-400 text-xs tracking-widest uppercase flex items-center gap-2">
+                        <i class="fa-solid fa-building-columns"></i> Rekening Resmi Donasi Yayasan
+                    </h4>
+                    <p class="text-xs text-emerald-200/90 leading-relaxed font-light">
+                        Mohon pastikan Anda menyalurkan donasi atau zakat infaq hanya ke rekening berizin resmi atas nama yayasan kami:
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <!-- REKENING BSI TERVERIFIKASI -->
+                        <div class="bg-emerald-900/60 border border-emerald-800/60 p-5 rounded-2xl flex flex-col justify-between shadow-inner">
+                            <div>
+                                <span class="text-[9px] bg-emerald-850 text-gold-400 px-2.5 py-1 rounded-md font-extrabold uppercase tracking-widest">Bank Syariah Indonesia (BSI)</span>
+                                <p class="text-xl font-mono font-extrabold text-white mt-3 select-all">7240676944</p>
+                                <p class="text-[9px] text-emerald-300 mt-2 font-medium">A.n. Yayasan Pendidikan Ulama Zuama Indonesia</p>
+                            </div>
+                            <button onclick="quickDonate('7240676944', 'BSI')" id="btn-copy-bsi" class="mt-4 w-full bg-gold-400 hover:bg-gold-500 text-emerald-950 text-xs font-black py-2.5 px-3 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-md transform active:scale-95">
+                                <i class="fa-solid fa-bolt"></i> Klik untuk Donasi
+                            </button>
+                        </div>
+
+                        <!-- REKENING SULSELBAR TERVERIFIKASI -->
+                        <div class="bg-emerald-900/60 border border-emerald-800/60 p-5 rounded-2xl flex flex-col justify-between shadow-inner">
+                            <div>
+                                <span class="text-[9px] bg-emerald-850 text-gold-400 px-2.5 py-1 rounded-md font-extrabold uppercase tracking-widest">Bank Sulselbar</span>
+                                <p class="text-lg font-mono font-extrabold text-white mt-3 select-all leading-tight">5302511234567891</p>
+                                <p class="text-[9px] text-emerald-300 mt-2 font-medium">A.n. Yayasan Pendidikan Ulama Zuama Indonesia</p>
+                            </div>
+                            <button onclick="quickDonate('5302511234567891', 'Bank Sulselbar')" id="btn-copy-sulsel" class="mt-4 w-full bg-gold-400 hover:bg-gold-500 text-emerald-950 text-xs font-black py-2.5 px-3 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-md transform active:scale-95">
+                                <i class="fa-solid fa-bolt"></i> Klik untuk Donasi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Donation Calculator Form -->
+            <div class="lg:col-span-6">
+                <div class="bg-white p-8 sm:p-10 rounded-[32px] shadow-xl border border-slate-100/80">
+                    <h3 class="text-2xl font-black text-emerald-950 text-center mb-8">Formulir Donasi Digital</h3>
+                    
+                    <form id="donation-form" onsubmit="handleDonation(event)" class="space-y-6">
+                        <!-- Select Program -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Pilih Program Kebaikan</label>
+                            <select id="donation-program" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-slate-800 text-sm font-semibold transition-all">
+                                <option value="Sedekah Beras Santri (Kebutuhan 100 kg/Bulan)">Sedekah Beras Santri (Kebutuhan 100 kg / Bulan)</option>
+                                <option value="Beasiswa Santri Yatim & Dhuafa (20 Orang Santri)">Beasiswa Santri Yatim & Dhuafa (Kebutuhan Belajar Santri)</option>
+                                <option value="Wakaf Asrama Santri Al Alaq (Progres 60%)">Wakaf Asrama Santri (Progres 60%)</option>
+                                <option value="Wakaf Pembangunan Masjid Al Alaq (Progres 20%)">Wakaf Pembangunan Masjid (Progres 20%)</option>
+                                <option value="Sedekah Fasilitas PAUD / TK Baru">Pengadaan Fasilitas Belajar PAUD / TK Baru</option>
+                            </select>
+                        </div>
+
+                        <!-- Amount Presets -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Pilih Jumlah Donasi</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="setDonationAmount(50000)" class="preset-btn py-3 bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 font-bold rounded-xl border border-slate-200 hover:border-emerald-500 transition-all text-xs sm:text-sm">Rp 50K</button>
+                                <button type="button" onclick="setDonationAmount(100000)" class="preset-btn py-3 bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 font-bold rounded-xl border border-slate-200 hover:border-emerald-500 transition-all text-xs sm:text-sm">Rp 100K</button>
+                                <button type="button" onclick="setDonationAmount(250000)" class="preset-btn py-3 bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 font-bold rounded-xl border border-slate-200 hover:border-emerald-500 transition-all text-xs sm:text-sm">Rp 250K</button>
+                            </div>
+                            <input type="number" id="donation-custom-amount" placeholder="Nominal Custom Lainnya (Rp)" min="10000" class="w-full mt-3 px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm font-medium transition-all" required>
+                        </div>
+
+                        <!-- Donor Name & Phone -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Nama Lengkap</label>
+                                <input type="text" id="donor-name" placeholder="Hamba Allah" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm font-medium transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">No. WhatsApp</label>
+                                <input type="tel" id="donor-phone" placeholder="Contoh: 0821xxxxxxxx" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm font-medium transition-all" required>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Pilih Rekening Tujuan</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="border rounded-xl p-4 flex items-center gap-3 cursor-pointer bg-slate-50 hover:bg-emerald-50/40 transition-colors">
+                                    <input type="radio" name="payment-method" value="BSI - 7240676944" checked class="text-emerald-800 focus:ring-emerald-800">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs font-extrabold text-slate-800">BSI Syariah</span>
+                                        <span class="text-[10px] text-slate-500 mt-0.5">7240676944</span>
+                                    </div>
+                                </label>
+                                <label class="border rounded-xl p-4 flex items-center gap-3 cursor-pointer bg-slate-50 hover:bg-emerald-50/40 transition-colors">
+                                    <input type="radio" name="payment-method" value="Sulselbar - 5302511234567891" class="text-emerald-800 focus:ring-emerald-800">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs font-extrabold text-slate-800">Bank Sulselbar</span>
+                                        <span class="text-[10px] text-slate-500 mt-0.5 font-mono">530...891</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-extrabold py-4 rounded-xl shadow-lg shadow-emerald-800/10 transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-heart text-red-400 animate-pulse"></i> Kirim Notifikasi Donasi (WA)
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Donation Receipt Modal (Simulasi) -->
+<div id="receipt-modal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="bg-white rounded-[32px] max-w-md w-full p-8 text-center shadow-2xl relative border border-slate-100">
+        <button onclick="closeReceiptModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 transition-colors"><i class="fa-solid fa-xmark text-xl"></i></button>
+        <span class="text-5xl text-emerald-800 inline-block mb-4"><i class="fa-solid fa-circle-check"></i></span>
+        <h4 class="text-2xl font-black text-emerald-950 mb-1">Alhamdulillah!</h4>
+        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-6">Langkah Akhir Penyaluran Donasi</p>
+        
+        <div class="bg-slate-50 p-5 rounded-2xl text-left text-sm space-y-2.5 mb-6 border border-emerald-100/50">
+            <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-slate-500 font-light">Donatur:</span> <span id="rec-donor" class="font-bold text-slate-800">Nama</span></div>
+            <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-slate-500 font-light">Program:</span> <span id="rec-program" class="font-semibold text-slate-800 text-xs">Program</span></div>
+            <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-slate-500 font-light">Tujuan Bank:</span> <span id="rec-method" class="font-extrabold text-emerald-900 text-xs">BSI</span></div>
+            <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-slate-500 font-light">Atas Nama:</span> <span class="font-bold text-slate-800 text-xs">Yayasan Pendidikan Ulama Zuama Indonesia</span></div>
+            <div class="flex justify-between pt-1"><span class="text-slate-500 font-bold">Total Transfer:</span> <span id="rec-amount" class="font-extrabold text-emerald-800 text-lg">Rp 100,000</span></div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 text-amber-950 rounded-xl p-4 text-xs text-left mb-6 space-y-1.5 leading-relaxed font-light">
+            <p class="font-bold text-amber-900"><i class="fa-solid fa-info-circle mr-1 text-amber-700"></i> Panduan Konfirmasi:</p>
+            <p>1. Silakan lakukan transfer ke nomor rekening tujuan di atas.</p>
+            <p>2. Klik tombol konfirmasi di bawah untuk mengirim bukti transfer otomatis via WhatsApp pengurus pondok.</p>
+        </div>
+
+        <button onclick="confirmDonationViaWA()" class="w-full bg-emerald-800 text-white font-extrabold py-4 rounded-xl hover:bg-emerald-900 transition-all flex items-center justify-center gap-2 shadow-md">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Konfirmasi Transfer Sekarang
+        </button>
+    </div>
+</div>
+
+<!-- New Student Registration Form (PSB Online) -->
+<section id="psb" class="py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-[32px] shadow-xl overflow-hidden border border-slate-100">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-emerald-950 to-emerald-800 p-8 sm:p-10 text-white text-center">
+                <span class="bg-gold-500 text-emerald-950 font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Tahun Pelajaran Baru</span>
+                <h2 class="text-3xl font-black mt-4">Pendaftaran PSB Online</h2>
+                <p class="text-emerald-200 text-sm mt-1.5 font-light">Khusus pendaftaran PAUD / TK Islam Al Alaq dan Beasiswa Tahfidz Yatim Dhuafa</p>
+            </div>
+
+            <!-- Steps Progress Bar -->
+            <div class="px-8 py-5 bg-slate-50 border-b border-slate-100 flex justify-between items-center text-xs md:text-sm text-slate-500">
+                <div id="step-indicator-1" class="flex items-center gap-2.5 text-emerald-800 font-bold">
+                    <span class="w-6 h-6 rounded-full bg-emerald-800 text-white flex items-center justify-center text-[10px]">1</span> Jenis Layanan & Biodata
+                </div>
+                <div class="w-8 h-[2px] bg-slate-200 shrink-0"></div>
+                <div id="step-indicator-2" class="flex items-center gap-2.5 font-medium">
+                    <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-[10px]">2</span> Orang Tua / Wali
+                </div>
+                <div class="w-8 h-[2px] bg-slate-200 shrink-0"></div>
+                <div id="step-indicator-3" class="flex items-center gap-2.5 font-medium">
+                    <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-[10px]">3</span> Selesai
+                </div>
+            </div>
+
+            <!-- Form Body -->
+            <form id="psb-form" onsubmit="handlePsbSubmit(event)" class="p-8 sm:p-10">
+                
+                <!-- STEP 1: Calon Santri Data -->
+                <div id="step-section-1" class="space-y-6">
+                    <h4 class="text-lg font-bold text-emerald-950 pb-2 border-b border-slate-100">Pilihan Program & Biodata Anak</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Program Pendidikan</label>
+                            <select id="santri-program" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm font-bold text-emerald-900" required>
+                                <option value="PAUD / TK Islam Al Alaq">PAUD / TK Islam Al Alaq (Usia 3 - 6 Tahun)</option>
+                                <option value="Tahfidzul Qur'an Yatim Dhuafa">Beasiswa Tahfidzul Qur'an (Untuk 20 Santri Yatim/Dhuafa)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Nama Lengkap Anak</label>
+                            <input type="text" id="santri-name" placeholder="Nama lengkap calon peserta didik" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Tempat, Tanggal Lahir</label>
+                            <input type="text" id="santri-birth" placeholder="Contoh: Makassar, 12-05-2021" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Status Prioritas Anak</label>
+                            <select id="santri-status" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm" required>
+                                <option value="Anak Yatim">Yatim (Ayah Meninggal)</option>
+                                <option value="Anak Piatu">Piatu (Ibu Meninggal)</option>
+                                <option value="Dhuafa / Kurang Mampu">Dhuafa / Keluarga Kurang Mampu</option>
+                                <option value="Keluarga Umum">Umum (Untuk Program PAUD / TK)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex justify-end pt-4">
+                        <button type="button" onclick="goToStep(2)" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-7 py-3 rounded-xl transition-all flex items-center gap-2 text-sm shadow-md">
+                            Lanjut <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Wali Data -->
+                <div id="step-section-2" class="hidden space-y-6">
+                    <h4 class="text-lg font-bold text-emerald-950 pb-2 border-b border-slate-100">Biodata Orang Tua / Wali</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Nama Orang Tua / Wali</label>
+                            <input type="text" id="wali-name" placeholder="Nama lengkap wali pendaftar" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Pekerjaan Utama</label>
+                            <input type="text" id="wali-job" placeholder="Contoh: Wiraswasta, Buruh, IRT, dll" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1.5">No. Kontak WhatsApp Aktif (Konfirmasi Pendaftaran)</label>
+                        <input type="tel" id="wali-phone" placeholder="Contoh: 0821xxxx" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-800 focus:outline-none text-sm" required>
+                    </div>
+                    <div class="flex justify-between pt-4">
+                        <button type="button" onclick="goToStep(1)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-6 py-3 rounded-xl transition-all text-sm">
+                            <i class="fa-solid fa-arrow-left"></i> Kembali
+                        </button>
+                        <button type="button" onclick="goToStep(3)" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-7 py-3 rounded-xl transition-all flex items-center gap-2 text-sm shadow-md">
+                            Lanjut <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Dokumen Verification -->
+                <div id="step-section-3" class="hidden space-y-6">
+                    <h4 class="text-lg font-bold text-emerald-950 pb-2 border-b border-slate-100">Konfirmasi Akhir</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed font-light">
+                        Pendaftaran Anda akan dikirimkan langsung ke pusat penerimaan siswa & santri baru Al Alaq via WhatsApp resmi untuk proses pemanggilan ujian seleksi / administrasi berkas fisik selanjutnya.
+                    </p>
+                    
+                    <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl text-xs space-y-2 text-emerald-900 leading-relaxed font-light shadow-inner">
+                        <p class="font-extrabold"><i class="fa-solid fa-check-double mr-1 text-emerald-800"></i> Informasi Penting:</p>
+                        <p>1. Tim administrasi kami akan segera menjadwalkan kunjungan langsung ke lokasi pondok.</p>
+                        <p>2. Syarat dokumen fisik (KK, Kartu Identitas Anak, Akta Kelahiran) diserahkan saat visitasi.</p>
+                    </div>
+
+                    <div class="flex justify-between pt-4">
+                        <button type="button" onclick="goToStep(2)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-6 py-3 rounded-xl transition-all text-sm">
+                            <i class="fa-solid fa-arrow-left"></i> Kembali
+                        </button>
+                        <button type="submit" class="bg-gradient-to-r from-emerald-800 to-emerald-700 hover:from-emerald-900 hover:to-emerald-850 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md text-sm flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Kirim Form Pendaftaran (WA)
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Location Footer Section -->
+<footer class="bg-emerald-950 text-white pt-24 pb-12 border-t-4 border-gold-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-16 mb-20">
+            
+            <!-- Contact Card -->
+            <div class="lg:col-span-4 space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="bg-emerald-800 p-2.5 rounded-2xl border border-gold-400/30">
+                        <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-black">PPTQ AL ALAQ</span>
+                        <span class="block text-xs text-gold-400 tracking-wider font-extrabold uppercase">Tahfidz & PAUD-TK Islam</span>
+                    </div>
+                </div>
+                <p class="text-sm text-emerald-200/90 leading-relaxed font-light">
+                    Lembaga pendidikan Islam khusus pembinaan santri yatim dan dhuafa secara gratis, serta pendidikan anak usia dini mandiri, cerdas, dan berakhlakul karimah.
+                </p>
+                <div class="space-y-3 text-sm text-emerald-100 font-light">
+                    <p class="flex items-start gap-2.5"><i class="fa-solid fa-map-location-dot text-gold-400 mt-1"></i> <span>Jl. Garuda, Dusun Mangngai, Desa Damai, Kec. Tanralili, Kabupaten Maros, Sulawesi Selatan, Indonesia</span></p>
+                    <p><a href="https://wa.me/6282195303065" target="_blank" class="hover:text-gold-400 transition-all inline-flex items-center gap-2"><i class="fa-solid fa-phone text-gold-400"></i> +62 821-9530-3065</a></p>
+                </div>
+            </div>
+
+            <!-- Fast Navigation Links -->
+            <div class="lg:col-span-4 grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-extrabold text-gold-400 mb-5 border-b border-emerald-800 pb-2 text-xs uppercase tracking-widest">Pesantren</h4>
+                    <ul class="space-y-3 text-sm text-emerald-200 font-light">
+                        <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#program" class="hover:text-white transition-colors">Program</a></li>
+                        <li><a href="#fasilitas" class="hover:text-white transition-colors">Pembangunan</a></li>
+                        <li><a href="#donasi" class="hover:text-white transition-colors">Wakaf & Zakat</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-gold-400 mb-5 border-b border-emerald-800 pb-2 text-xs uppercase tracking-widest">Pendaftaran</h4>
+                    <ul class="space-y-3 text-sm text-emerald-200 font-light">
+                        <li><a href="#psb" class="hover:text-white transition-colors">PAUD / TK Baru</a></li>
+                        <li><a href="#psb" class="hover:text-white transition-colors">Tahfidz Yatim Gratis</a></li>
+                        <li><a href="https://wa.me/6282195303065?text=Assalamualaikum,%20saya%20ingin%20bertanya%20syarat%20pendaftaran" target="_blank" class="hover:text-white transition-colors">Hubungi Panitia</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact/Inquiry Message Box -->
+            <div class="lg:col-span-4">
+                <h4 class="font-bold text-gold-400 mb-5 border-b border-emerald-800 pb-2 text-xs uppercase tracking-widest">Kirim Pesan Langsung</h4>
+                <form onsubmit="handleInquiry(event)" class="space-y-3">
+                    <input type="text" id="inquiry-name" placeholder="Nama Anda" class="w-full px-4 py-3 bg-emerald-900/60 border border-emerald-800/80 rounded-xl text-xs focus:ring-1 focus:ring-gold-400 focus:outline-none" required>
+                    <input type="tel" id="inquiry-phone" placeholder="WhatsApp Aktif" class="w-full px-4 py-3 bg-emerald-900/60 border border-emerald-800/80 rounded-xl text-xs focus:ring-1 focus:ring-gold-400 focus:outline-none" required>
+                    <textarea id="inquiry-message" rows="3" placeholder="Isi pesan / pertanyaan tentang pendaftaran / donasi..." class="w-full px-4 py-3 bg-emerald-900/60 border border-emerald-800/80 rounded-xl text-xs focus:ring-1 focus:ring-gold-400 focus:outline-none" required></textarea>
+                    <button type="submit" class="w-full bg-gold-400 hover:bg-gold-500 text-emerald-950 font-black py-3 rounded-xl text-xs transition-colors flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> Kirim Pesan via WhatsApp
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <hr class="border-emerald-800/40 mb-8">
+
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-300 font-light">
+            <p>&copy; 2026 PPTQ Yatim Dhuafa Al Alaq. All rights reserved.</p>
+            <p class="font-bold text-emerald-400">Mencetak Hafizh Qur'an yang Cerdas & Berdaya Guna</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Donation Button for Mobile devices -->
+<div class="fixed bottom-4 right-4 md:hidden z-30">
+    <a href="#donasi" class="bg-gradient-to-r from-gold-500 to-amber-500 text-emerald-950 font-bold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-xl border border-gold-400 text-sm">
+        <i class="fa-solid fa-heart-circle-check text-base"></i> Donasi Asrama
+    </a>
+</div>
+
+<!-- Dynamic Javascript Code -->
+<script>
+    // Verses Array for the generator
+    const quranVerses = [
+        {
+            arabic: "إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ",
+            translation: '"Sesungguhnya Kamilah yang menurunkan Al-Qur\'an, dan pasti Kami pula yang memeliharanya."',
+            reference: "(QS. Al-Hijr: 9)"
+        },
+        {
+            arabic: "الَّذِي عَلَّمَ بِالْقَلَمِ عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ",
+            translation: '"Yang mengajar (manusia) dengan perantaraan kalam. Dia mengajarkan kepada manusia apa yang tidak diketahuinya."',
+            reference: "(QS. Al-Alaq: 4-5)"
+        },
+        {
+            arabic: "وَمَا تُقَدِّمُوا لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِndَ اللَّهِ",
+            translation: '"Dan kebaikan apa saja yang kamu usahakan bagi dirimu, tentu kamu akan mendapat pahalanya di sisi Allah."',
+            reference: "(QS. Al-Baqarah: 110)"
+        },
+        {
+            arabic: "فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ",
+            translation: '"Maka terhadap anak yatim janganlah engkau berlaku sewenang-wenang. Dan terhadap orang yang meminta-minta janganlah engkau menghardiknya."',
+            reference: "(QS. Ad-Duha: 9-10)"
+        }
+    ];
+
+    let currentVerseIndex = 0;
+    let globalDonationDetails = {
+        donor: 'Hamba Allah',
+        amount: 0,
+        program: '',
+        method: ''
+    };
+
+    // Safe Copy helper for frame environments
+    function copyToClipboard(text, elementId) {
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // Safe for mobile devices
+        
+        try {
+            document.execCommand("copy");
+            showToast("Nomor rekening berhasil disalin!");
+            
+            // Visual feedback on copy button
+            const btn = document.getElementById(elementId);
+            if (btn) {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check text-emerald-100"></i> Berhasil Disalin';
+                btn.classList.replace('bg-emerald-800', 'bg-emerald-600');
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.replace('bg-emerald-600', 'bg-emerald-800');
+                }, 2500);
+            }
+        } catch (err) {
+            showToast("Gagal menyalin. Silakan salin secara manual.", "warning");
+        }
+        document.body.removeChild(tempInput);
+    }
+
+    // 1-Click Fast Donation Integration
+    function quickDonate(accountNo, bankName) {
+        // Copy account number instantly to clipboard
+        const tempInput = document.createElement("input");
+        tempInput.value = accountNo;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+        
+        try {
+            document.execCommand("copy");
+            showToast(`Rekening ${bankName} (${accountNo}) berhasil disalin!`);
+        } catch (err) {
+            console.error("Gagal menyalin", err);
+        }
+        document.body.removeChild(tempInput);
+
+        // Configure default state for receipt modal
+        const programName = "Sedekah Beras Santri (Kebutuhan 100 kg/Bulan)";
+        const defaultAmount = 100000; // Preset 100k as standard fast transfer value
+
+        globalDonationDetails = {
+            donor: 'Hamba Allah',
+            amount: defaultAmount,
+            program: programName,
+            method: `${bankName} - ${accountNo}`,
+            phone: '-'
+        };
+
+        // Write details into visual receipt modal
+        document.getElementById('rec-donor').innerText = 'Hamba Allah';
+        document.getElementById('rec-program').innerText = programName;
+        document.getElementById('rec-method').innerText = `${bankName} - ${accountNo}`;
+        document.getElementById('rec-amount').innerText = formatCurrency(defaultAmount);
+
+        // Trigger and pop-up the receipt confirmation modal instantly
+        document.getElementById('receipt-modal').classList.remove('hidden');
+    }
+
+    // Generate random verse of the day
+    function generateVerse() {
+        const textContainer = document.getElementById('quran-container');
+        if (textContainer) {
+            textContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentVerseIndex = (currentVerseIndex + 1) % quranVerses.length;
+                document.getElementById('quran-arabic').innerText = quranVerses[currentVerseIndex].arabic;
+                document.getElementById('quran-translation').innerText = quranVerses[currentVerseIndex].translation;
+                document.getElementById('quran-reference').innerText = quranVerses[currentVerseIndex].reference;
+                textContainer.style.opacity = '1';
+            }, 300);
+        }
+    }
+
+    // Toggle Mobile Navigation Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on clicking any link inside it
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Toast Notification System
+    function showToast(message, type = 'success') {
+        const toastContainer = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border text-sm transition-all duration-300 transform translate-y-5 opacity-0 ${
+            type === 'success' 
+            ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
+            : 'bg-amber-50 text-amber-800 border-amber-200'
+        }`;
+        
+        const icon = type === 'success' 
+            ? '<i class="fa-solid fa-circle-check text-emerald-800 text-lg"></i>' 
+            : '<i class="fa-solid fa-triangle-exclamation text-amber-700 text-lg"></i>';
+
+        toast.innerHTML = `${icon} <span class="font-medium">${message}</span>`;
+        toastContainer.appendChild(toast);
+
+        // Animate In
+        setTimeout(() => {
+            toast.classList.remove('translate-y-5', 'opacity-0');
+        }, 10);
+
+        // Remove after 4 seconds
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-5');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 4000);
+    }
+
+    // Tab Switcher Vision & Mission
+    function switchTab(tab) {
+        const visiBtn = document.getElementById('tab-visi-btn');
+        const misiBtn = document.getElementById('tab-misi-btn');
+        const visiContent = document.getElementById('tab-visi-content');
+        const misiContent = document.getElementById('tab-misi-content');
+
+        if (tab === 'visi') {
+            visiBtn.className = "px-5 py-2.5 rounded-xl text-xs font-extrabold bg-emerald-800 text-white shadow-md shadow-emerald-800/10 transition-all";
+            misiBtn.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200/70 transition-all";
+            visiContent.classList.remove('hidden');
+            misiContent.classList.add('hidden');
+        } else {
+            misiBtn.className = "px-5 py-2.5 rounded-xl text-xs font-extrabold bg-emerald-800 text-white shadow-md shadow-emerald-800/10 transition-all";
+            visiBtn.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200/70 transition-all";
+            misiContent.classList.remove('hidden');
+            visiContent.classList.add('hidden');
+        }
+    }
+
+    // Donation Amount Preset Setter
+    function setDonationAmount(amount) {
+        document.getElementById('donation-custom-amount').value = amount;
+        // Visual indicator active state
+        const buttons = document.querySelectorAll('.preset-btn');
+        buttons.forEach(btn => {
+            if (btn.innerText.includes(amount/1000 + 'K')) {
+                btn.classList.add('bg-emerald-800', 'text-white', 'border-emerald-800');
+                btn.classList.remove('bg-slate-50', 'text-slate-700');
+            } else {
+                btn.classList.remove('bg-emerald-800', 'text-white', 'border-emerald-800');
+                btn.classList.add('bg-slate-50', 'text-slate-700');
+            }
+        });
+    }
+
+    // Format currency display helper
+    function formatCurrency(number) {
+        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+    }
+
+    // Handle Donation Form Submit
+    function handleDonation(event) {
+        event.preventDefault();
+        const program = document.getElementById('donation-program').value;
+        const amount = document.getElementById('donation-custom-amount').value;
+        const donor = document.getElementById('donor-name').value || 'Hamba Allah';
+        const phone = document.getElementById('donor-phone').value;
+        const method = document.querySelector('input[name="payment-method"]:checked').value;
+
+        // Save to global variable for WhatsApp confirmation
+        globalDonationDetails = {
+            donor: donor,
+            amount: amount,
+            program: program,
+            method: method,
+            phone: phone
+        };
+
+        // Set values inside receipt modal
+        document.getElementById('rec-donor').innerText = donor;
+        document.getElementById('rec-program').innerText = program;
+        document.getElementById('rec-method').innerText = method;
+        document.getElementById('rec-amount').innerText = formatCurrency(amount);
+
+        // Show Modal
+        document.getElementById('receipt-modal').classList.remove('hidden');
+    }
+
+    // Send Donation Confirmation directly to WhatsApp
+    function confirmDonationViaWA() {
+        const textMessage = `Assalamualaikum Wr. Wb. Pengurus PPTQ Al Alaq,\n\nSaya ingin konfirmasi penyaluran donasi dengan rincian berikut:\n` +
+            `• *Nama Donatur:* ${globalDonationDetails.donor}\n` +
+            `• *Program Kebaikan:* ${globalDonationDetails.program}\n` +
+            `• *Jumlah Donasi:* ${formatCurrency(globalDonationDetails.amount)}\n` +
+            `• *Metode Rekening:* ${globalDonationDetails.method}\n` +
+            `• *No. WhatsApp:* ${globalDonationDetails.phone}\n\n` +
+            `Mohon didata dan dilaporkan sebagaimana mestinya. Terima kasih. Jazakumullah khairan katsiran.`;
+        
+        const waUrl = `https://wa.me/6282195303065?text=${encodeURIComponent(textMessage)}`;
+        window.open(waUrl, '_blank');
+        closeReceiptModal();
+    }
+
+    function closeReceiptModal() {
+        document.getElementById('receipt-modal').classList.add('hidden');
+        document.getElementById('donation-form').reset();
+        
+        // Reset preset buttons styling
+        const buttons = document.querySelectorAll('.preset-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('bg-emerald-800', 'text-white', 'border-emerald-800');
+            btn.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        
+        showToast("Terima kasih! Notifikasi donasi telah dicatat.");
+    }
+
+    // Step Wizard Navigation for PSB Form
+    function goToStep(step) {
+        // Validate prior step inputs briefly
+        if (step === 2) {
+            const name = document.getElementById('santri-name').value;
+            const birth = document.getElementById('santri-birth').value;
+            if (!name || !birth) {
+                showToast("Mohon lengkapi formulir pendaftar dahulu.", "warning");
+                return;
+            }
+        }
+        if (step === 3) {
+            const wali = document.getElementById('wali-name').value;
+            const phone = document.getElementById('wali-phone').value;
+            if (!wali || !phone) {
+                showToast("Mohon lengkapi data Wali pendaftar.", "warning");
+                return;
+            }
+        }
+
+        // Hide all sections
+        document.getElementById('step-section-1').classList.add('hidden');
+        document.getElementById('step-section-2').classList.add('hidden');
+        document.getElementById('step-section-3').classList.add('hidden');
+
+        // Unset indicators active style
+        document.getElementById('step-indicator-1').className = "flex items-center gap-2.5 font-medium";
+        document.getElementById('step-indicator-2').className = "flex items-center gap-2.5 font-medium";
+        document.getElementById('step-indicator-3').className = "flex items-center gap-2.5 font-medium";
+
+        // Show active section
+        document.getElementById(`step-section-${step}`).classList.remove('hidden');
+        
+        // Highlight correct indicator
+        for (let i = 1; i <= step; i++) {
+            const indicator = document.getElementById(`step-indicator-${i}`);
+            indicator.className = "flex items-center gap-2.5 text-emerald-800 font-bold";
+            const numSpan = indicator.querySelector('span');
+            numSpan.className = "w-6 h-6 rounded-full bg-emerald-800 text-white flex items-center justify-center text-[10px]";
+        }
+    }
+
+    // Submit PSB Application and send direct format to WhatsApp
+    function handlePsbSubmit(event) {
+        event.preventDefault();
+        const pProgram = document.getElementById('santri-program').value;
+        const sName = document.getElementById('santri-name').value;
+        const sBirth = document.getElementById('santri-birth').value;
+        const sStatus = document.getElementById('santri-status').value;
+        const wName = document.getElementById('wali-name').value;
+        const wJob = document.getElementById('wali-job').value;
+        const wPhone = document.getElementById('wali-phone').value;
+        
+        const messageText = `Assalamualaikum Wr. Wb. Panitia PSB PPTQ Al Alaq,\n\nSaya ingin mendaftarkan putra/putri saya untuk belajar di Al Alaq via PSB Online. Berikut biodata kami:\n\n` +
+            `*DATA CALON PESERTA DIDIK:*\n` +
+            `• *Pilihan Program:* ${pProgram}\n` +
+            `• *Nama Lengkap:* ${sName}\n` +
+            `• *Tempat, Tgl Lahir:* ${sBirth}\n` +
+            `• *Status Prioritas:* ${sStatus}\n\n` +
+            `*DATA ORANG TUA / WALI:*\n` +
+            `• *Nama Wali:* ${wName}\n` +
+            `• *Pekerjaan:* ${wJob}\n` +
+            `• *No. WhatsApp:* ${wPhone}\n\n` +
+            `Mohon konfirmasi jadwal kunjungan lokasi dan seleksi lanjutan berkas fisik kami. Terima kasih.`;
+        
+        const waUrl = `https://wa.me/6282195303065?text=${encodeURIComponent(messageText)}`;
+        window.open(waUrl, '_blank');
+        
+        // Reset Form & Show Success Notification
+        document.getElementById('psb-form').reset();
+        goToStep(1);
+        showToast("Pendaftaran berhasil diproses! Silakan lengkapi chat WhatsApp.");
+    }
+
+    // Send Quick Contact Inquiry Message Box to WhatsApp
+    function handleInquiry(event) {
+        event.preventDefault();
+        const name = document.getElementById('inquiry-name').value;
+        const phone = document.getElementById('inquiry-phone').value;
+        const msg = document.getElementById('inquiry-message').value;
+
+        const inquiryText = `Assalamualaikum Wr. Wb. Admin Al Alaq,\n\nSaya *${name}* (No. WA: ${phone}) ingin mengajukan pertanyaan:\n\n"${msg}"\n\nMohon bantuannya, terima kasih.`;
+        const waUrl = `https://wa.me/6282195303065?text=${encodeURIComponent(inquiryText)}`;
+        
+        window.open(waUrl, '_blank');
+
+        showToast("Pesan Anda telah siap dikirim ke WhatsApp Admin.");
+        
+        // Clear Form inputs
+        document.getElementById('inquiry-name').value = '';
+        document.getElementById('inquiry-phone').value = '';
+        document.getElementById('inquiry-message').value = '';
+    }
+
+    // Run when DOM fully loads
+    window.onload = function() {
+        // Initialize dynamic verse
+        generateVerse();
+    }
+</script>
+
+</body>
+</html>
